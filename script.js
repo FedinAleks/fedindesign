@@ -1,19 +1,31 @@
 // header
 
 window.addEventListener('scroll', function() {
-    var header = document.querySelector('.page_home header');
-    var scrollPosition = window.scrollY;
+  var header = document.querySelector('.page_home header'); // Означення header тут
+  var scrollPosition = window.scrollY;
 
-    if (scrollPosition > 100) {
-        header.classList.add('fixed_header');
-    } else {
-        header.classList.remove('fixed_header');
-    }
+  if (scrollPosition > 100) {
+      header.classList.add('fixed_header');
+  } else {
+      header.classList.remove('fixed_header');
+  }
+
+  // Перемістіть наступний рядок всередину обробника подій scroll
+  var clonedHeader = header.cloneNode(true);
+  clonedHeader.classList.add('fixed_header_clone');
+  document.querySelector('.page_home').appendChild(clonedHeader);
 });
 
-var clonedHeader = header.cloneNode(true);
-clonedHeader.classList.add('fixed_header_clone');
-document.querySelector('.page_home').appendChild(clonedHeader);
+// Ось ваші функції openForm та closeForm
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  document.getElementById("overlay").style.display = "block"; // Показати overlay
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  document.getElementById("overlay").style.display = "none"; // Приховати overlay
+}
 
 
 // how i work
