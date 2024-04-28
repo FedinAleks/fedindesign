@@ -48,27 +48,33 @@
             
             <div id="overlay" onclick="closeForm()"></div>
             <div class="form_popup" id="myForm">
-                <form class="form_container">
-                  <h2>Submit Request</h2>
-                  <label for="name">Name:</label>
-                  <input type="text" id="name" name="name" required>
-                  
-                  <label for="service">Service:</label>
-                  <select id="service" name="service" required>
-                    <option value="website">Website</option>
-                    <option value="banner">Banner</option>
-                    <option value="mobile_app">Mobile App</option>
-                    <option value="video">Video</option>
-                  </select>
-                  
-                  <label for="phone">Phone Number:</label>
-                  <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
-                  
-                  <label for="comment">Comment:</label>
-                  <textarea id="comment" name="comment" required></textarea>
-                  
-                  <button type="submit" class="button_primary">Submit</button>
-                  <button type="button" class="button_cancel" onclick="closeForm()">Close</button>
+                <form class="form_container" action="/submit-form" method="POST">
+                    <span>Submit Request</span>
+                    <div>                        
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="service">Service:</label>
+                        <select id="service" name="service" required>
+                            <option value="website">Website</option>
+                            <option value="banner">Banner</option>
+                            <option value="mobile_app">Mobile App</option>
+                            <option value="video">Video</option>
+                            <option value="cooperation">Cooperation</option>
+                        </select>
+                        
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{12}" required>
+                    </div>
+                    <div>
+                        <label for="comment">Comment:</label>
+                        <textarea id="comment" name="comment" required></textarea>
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="ВАШ_КЛЮЧ_САЙТУ"></div>
+                    <div>
+                        <button type="submit" class="button_primary">Submit</button>
+                        <button type="button" class="button_cancel" onclick="closeForm()">Close</button>
+                    </div>
                 </form>
               </div>
         </section>
@@ -94,14 +100,19 @@
                     <span class="aboutme_block4_maintext">I am a creative UI/UX designer with a passion for crafting unique and effective user interfaces. My approach blends aesthetics with functionality, providing users with an engaging and seamless experience. Through design, I weave stories that leave lasting impressions and contribute to the success of projects.</span>
                     <span class="aboutme_block4_text_subtitle">Skills</span>
                     <ul class="list_skills">
-                        <li><span class="skill" title="Опис першого навичка">Banners</span></li>
-                        <li><span class="skill" title="Опис другого навичка">Email campaigns</span></li>
-                        <li><span class="skill" title="Опис третього навичка">Design systems</span></li>
-                        <li><span class="skill" title="Опис третього навичка">Prototypes</span></li>
-                        <li><span class="skill" title="Опис третього навичка">YouTube covers</span></li>
-                        <li><span class="skill" title="Опис третього навичка">Animation and video</span></li>
-                        <li><span class="skill" title="Опис третього навичка">Websites</span></li>
-                        <li><span class="skill" title="Опис третього навичка">Mobile apps</span></li>
+                        <li><span class="skill" title="Static banners, Animated banners, HTML5 banners">Banners</span></li>
+                        <li><span class="skill">Email campaigns</span></li>
+                        <li><span class="skill">Design systems</span></li>
+                        <li><span class="skill" title="Low-fidelity prototypes, High-fidelity prototypes">Prototypes</span></li>
+                        <li><span class="skill">YouTube covers</span></li>
+                        <li><span class="skill">Animation and video</span></li>
+                        <li><span class="skill">Websites</span></li>
+                        <li><span class="skill">Mobile apps</span></li>
+                        <li><span class="skill">A/B testing</span></li>
+                        <li><span class="skill">HTML/CSS/JavaScript</span></li>
+                        <li><span class="skill" title="Desktop, Mobile, Tab">Adaptive design</span></li>
+                        <li><span class="skill">Communication skills</span></li>
+                        <li><span class="skill">Deep understanding of User Experience</span></li>
                     </ul>
                 </div>
                 <div class="aboutme_block5">
@@ -161,14 +172,14 @@
                         <span class="services_title">Mobile App</span>
                         <div class="service_info">
                             <ul class="services_list">
+                                <li class="servise">Utility apps</li>
+                                <li class="servise">Social networking</li>
                                 <li class="servise">E-commerce</li>
-                                <li class="servise">Educational Website</li>
-                                <li class="servise">Portfolio Website</li>
-                                <li class="servise">Landing page</li>
-                                <li class="servise">FinTech Website</li>
-                                <li class="servise">Informational Website</li>
-                                <li class="servise">Personal Website</li>
-                                <li class="servise">Corporate Website</li>
+                                <li class="servise">Entertainment</li>
+                                <li class="servise">Health and fitness</li>
+                                <li class="servise">Travel and navigation</li>
+                                <li class="servise">Productivity</li>
+                                <li class="servise">Education</li>
                             </ul>
                             <div>
                                 <div class="service_info_price">from 800$</div>
@@ -179,14 +190,7 @@
                         <span class="services_title">Animation</span>
                         <div class="service_info">
                             <ul class="services_list">
-                                <li class="servise">E-commerce</li>
-                                <li class="servise">Educational Website</li>
-                                <li class="servise">Portfolio Website</li>
-                                <li class="servise">Landing page</li>
-                                <li class="servise">FinTech Website</li>
-                                <li class="servise">Informational Website</li>
-                                <li class="servise">Personal Website</li>
-                                <li class="servise">Corporate Website</li>
+                                <li class="servise">2D vector animation</li>
                             </ul>
                             <div>
                                 <div class="service_info_price">from 100$</div>
@@ -195,7 +199,7 @@
                     </div>
                 </section>
             </div>
-            <div class="main_buttons">
+            <div class="main_buttons_service">
                 <button class="button_primary">Try now</button>
                 <button class="button_secodary">View works</button>
             </div>
@@ -212,7 +216,7 @@
                         </button>                   
                     </div>
                     <div class="description" style="display: none;">
-                            <p>Description 1</p>
+                            <p>Briefing helps understand the project requirements and create a concept that meets its needs. The success of the project depends on this stage, so it is important to devote proper attention and time to it. This process facilitates understanding of the purpose, target audience, and key functionalities that the project should fulfill.</p>
                     </div>
                 </div>
                 <div class="Briefing">
@@ -224,7 +228,7 @@
                         </button>                        
                     </div>
                     <div class="description" style="display: none;">
-                            <p>Description 2</p>
+                            <p>Analysis and Prototyping are crucial stages in the web design process. Analysis involves gathering and assessing information about the project, including client requirements, target audience, competitors, and market trends. This phase helps identify key objectives and establish a solid foundation for the project. Prototyping, on the other hand, involves creating a preliminary version of the website to visualize its layout, functionality, and user experience. It allows for early testing and feedback, enabling designers to refine and improve the design before full development. These stages are essential for ensuring that the final product meets the client's needs and achieves its goals effectively.</p>
                     </div>
                 </div>
                 <div class="Briefing">
@@ -236,7 +240,7 @@
                         </button>                       
                     </div>
                     <div class="description" style="display: none;">
-                            <p>Description 3</p>
+                            <p>The process of developing the visual part involves creating a design that reflects the style and brand identity, selecting colors and fonts, designing interface elements for a convenient user experience, and adapting to different devices. This stage includes creating layouts, working on design elements, and testing for aesthetic appeal and usability. Additionally, feedback is collected for further refinement of the design to meet the needs of clients and users.</p>
                     </div>
                 </div>
                 <div class="Briefing">
@@ -248,7 +252,7 @@
                         </button>                    
                     </div>
                     <div class="description" style="display: none;">
-                            <p>Description 4</p>
+                            <p>The final stage involves delivering the finalized layout to the client or development team. Typically, this includes providing all necessary design files. Clear documentation or guidance may also be provided to ensure successful implementation of the design. Additionally, the designer may offer support or consultations during the development phase to address any questions or issues that arise. This stage marks the transition from design to development, where the visual concept comes to life on websites or other digital platforms.</p>
                     </div>
                 </div>
             </div>
