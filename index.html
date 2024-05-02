@@ -25,6 +25,21 @@
                     </ul>
                 </nav>
                 <button class="button_primary" onclick="openForm()">Submit request</button>
+                <button class="burger_menu" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="272531" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1m0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1M3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1"/></svg>
+                </button>
+                <div id="menu" class="mobile_menu">
+                    <ul class="menu_mobile_list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About me</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">How I work</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                    <button class="close_button" onclick="closeMenu()">Close</button>
+                    <!-- Add your menu items here -->
+                </div>
             </header>            
             <h1>
                 elevate your <br><span class="title_yellow_text">brand</span> with <br>my creative magic
@@ -88,7 +103,6 @@
                     </span>
                 </div>
                 <div class="aboutme_block2">
-                    <img src="./image/aboutme_block2.png">
                 </div>
                 <div class="aboutme_block3">
                     <span class="aboutme_block1_text_yellow">UI/UX design</span>
@@ -112,11 +126,9 @@
                         <li><span class="skill">HTML/CSS/JavaScript</span></li>
                         <li><span class="skill" title="Desktop, Mobile, Tab">Adaptive design</span></li>
                         <li><span class="skill">Communication skills</span></li>
-                        <li><span class="skill">Deep understanding of User Experience</span></li>
                     </ul>
                 </div>
                 <div class="aboutme_block5">
-                    <img src="./image/aboutme_block5.png">
                 </div>
             </div>
             <div class="aboutme_skill_software">
@@ -356,9 +368,10 @@
                 <li><a href="#">Contacts</a></li>
             </ul>
         </nav>
-        <button class="button_primary">Try now</button>
-        <button class="button_primary" onclick="openForm()">Submit request</button>
-        
+        <div class="footer_buttons">
+            <button class="button_primary">Try now</button>
+            <button class="button_primary" onclick="openForm()">Submit request</button>
+        </div>
     </footer>
     
 

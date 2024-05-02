@@ -27,6 +27,20 @@ function closeForm() {
   document.getElementById("overlay").style.display = "none"; // Приховати overlay
 }
 
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+
+function closeMenu() {
+  var menu = document.getElementById("menu");
+  menu.style.display = "none";
+}
+
 
 // how i work
 

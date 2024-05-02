@@ -24,8 +24,8 @@ body {
 }
 header {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 6em;
 }
 .fixed_header {
@@ -52,7 +52,12 @@ header {
     background-color: #272531;
     color: #fff;
 }
-
+.fixed_header .burger_menu {
+    background-color: #272531;
+}
+.fixed_header .burger_menu svg {
+    fill: #DDFF0B;
+}
 .fixed_header_clone {
     display: none;
     visibility: hidden;
@@ -80,6 +85,57 @@ header {
 }
 .menu_list li a:hover {
     color: #DDFF0B;
+}
+.burger_menu {
+    display: none;
+    border-radius: 100%;
+    border: none;
+    padding: 1em;
+}
+.burger_menu:hover {
+    background-color: #272531;
+    fill: #DDFF0B;
+}
+
+.mobile_menu {
+    display: none; /* замість display: none; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 100%; /* наприклад, встановіть максимальну ширину вашого меню */
+    height: auto; /* замість 100% */
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    text-align: center; /* вирівняти текст по центру */
+    padding: 8em 8em;
+  }
+.menu_mobile_list {
+    list-style: none;    
+    padding: 0;
+    margin-bottom: 7em;
+}
+.menu_mobile_list a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 38px;
+    width: 100%;
+}
+.menu_mobile_list a:hover {
+    text-decoration: none;
+    color: #DDFF0B;
+    font-size: 38px;
+    background-color: #7b7b7b;
+}
+.close_button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #272531;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
 }
 
 .button_primary {
@@ -243,6 +299,13 @@ textarea {
     border-radius: 20px;
     grid-column: span 3;
 }
+.aboutme_block2 {
+    background-image: url(./image/aboutme_block2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 420px;
+}
 .aboutme_block4 {
     background-color: #DDFF0B;
     grid-row: 2;
@@ -252,7 +315,7 @@ textarea {
 .aboutme_block1, .aboutme_block3, .aboutme_block4 {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 3em;
     justify-content: center;
 }
 .aboutme_block1_text {
@@ -305,6 +368,14 @@ textarea {
     white-space: nowrap;
     overflow: hidden;
     animation: pulse 2s ease-in-out infinite alternate;
+}
+.aboutme_block5 {
+    background-image: url(./image/aboutme_block5.png);
+    width: 345px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
 }
 
 .page_service {
@@ -727,3 +798,209 @@ footer {
     90.69% { transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, -299.705, -224.784, 0, 1); }
     100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, -225, 0, 1); } 
   }
+
+
+
+@media (max-width: 1435px) {
+    header {
+        gap: 22em;
+    }
+    .menu_list {
+        display: none;
+    }
+    header .button_primary {
+        display: none;
+    }
+    .burger_menu {
+        display: block;
+    }
+    .aboutme_block2 {
+        background-size: cover;
+        background-position: center;
+    }
+    .aboutme_block5 {
+        background-size: cover;
+        background-position: center;
+    }
+}
+@media (max-width: 1315px) {
+    .aboutme_block1_text {
+        font-size: 30px;
+    }
+    .aboutme_block1_text_yellow {
+        font-size: 30px;
+    }
+}
+@media (max-width: 1135px) {
+    header {
+        gap: 15em;
+    }
+    @keyframes moveCenterViolet {
+        0% {
+            transform: translate(-50%, -50%); 
+        }
+        100% {
+            transform: translate(300%, 150%); 
+        }
+    }
+    .aboutme_block1_text {
+        font-size: 32px;
+    }
+    .aboutme_block1_text_yellow {
+        font-size: 32px;
+    }
+    .aboutme_block2 {
+        width: 150px;
+        background-size: cover;
+        background-position: center;
+    }
+    .aboutme_block5 {
+        width: 245px;
+    }
+}
+@media (max-width: 911px) {
+    header {
+        gap: 10em;
+    }
+    @keyframes moveCenterViolet {
+        0% {
+            transform: translate(-50%, -50%); 
+        }
+        100% {
+            transform: translate(200%, 150%); 
+        }
+    }
+    .aboutme_block1_text {
+        font-size: 24px;
+    }
+    .aboutme_block1_text_yellow {
+        font-size: 24px;
+    }
+    .aboutme_block1, .aboutme_block3, .aboutme_block4 {
+        padding: 1em;
+    }
+    .services {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px) {
+    header {
+        gap: 10em;
+    }
+    .main_buttons_service {
+        margin-left: 30%;
+    }
+}
+@media (max-width: 425px) {
+    .wrapper {
+        margin: 1em 1em;
+    }
+    header {
+        gap: 3em;
+    }
+    h1, .title_yellow_text {
+        margin-top: 2em;
+        font-size: 36px;
+    }
+    .violet_radial {
+        display: none;
+    }
+    .yellow_radial {
+        display: none;   
+    }
+    .main_buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    .button_secodary {
+        margin-left: 0;
+    }
+    .social_media ul {
+        gap: 2em;
+    }
+    .aboutme_block1 {
+        width: 80%;
+    }
+    .aboutme_block1_text, .aboutme_block1_text_yellow {
+        font-size: 18px;
+    }
+    .aboutme_block2 {
+        display: none;
+    }
+    .aboutme_block3 {
+        width: 100%;
+    }
+    .aboutme_block3_text_white {
+        font-size: 18px;
+    }
+    .aboutme_block5 {
+        display: none;
+    }
+    .main_buttons_service {
+        margin-left: 20%;
+    }
+    .block_name {
+        margin-left: 25%;
+    }
+    .subtitle_contacts {
+        width: 100%;
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+    }
+    .footer_buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+}
+@media (max-width: 325px) {
+    header {
+        gap: 2em;
+    }
+    .social_media ul {
+        gap: 1em;
+    }
+    .aboutme_block1 {
+        width: 75%;
+        padding: 1em;
+    }
+    .aboutme_block1_text, .aboutme_block1_text_yellow {
+        font-size: 14px;
+    }
+    .aboutme_block2 {
+        display: none;
+    }
+    .aboutme_block3 {
+        width: 100%;
+    }
+    .aboutme_block3_text_white {
+        font-size: 14px;
+        margin-top: 1em;
+    }
+    .skill {
+        font-size: 12px;
+    }
+    .main_buttons_service {
+        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    h3 {
+        font-size: 48px;
+    }
+    .block_name {
+        font-size: 12px;
+    }
+    .description {
+        font-size: 12px;
+    }
+}
