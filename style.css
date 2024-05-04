@@ -568,7 +568,7 @@ img {
     img {
       width: 100%;
       transition: all .3s ease-in-out;
-      border-radius: 20px;
+      border-radius: 10px;
     }
     img:hover {
         box-shadow: 0 5px 10px rgba(203, 253, 0, 0.2);
@@ -823,6 +823,10 @@ footer {
         background-position: center;
     }
 }
+
+
+
+
 @media (max-width: 1315px) {
     .aboutme_block1_text {
         font-size: 30px;
@@ -831,6 +835,10 @@ footer {
         font-size: 30px;
     }
 }
+
+
+
+
 @media (max-width: 1135px) {
     header {
         gap: 15em;
@@ -858,6 +866,10 @@ footer {
         width: 245px;
     }
 }
+
+
+
+
 @media (max-width: 911px) {
     header {
         gap: 10em;
@@ -884,6 +896,10 @@ footer {
         flex-direction: column;
     }
 }
+
+
+
+
 @media (max-width: 768px) {
     header {
         gap: 10em;
@@ -891,7 +907,16 @@ footer {
     .main_buttons_service {
         margin-left: 30%;
     }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
+
+
+
 @media (max-width: 425px) {
     .wrapper {
         margin: 1em 1em;
@@ -944,6 +969,11 @@ footer {
     }
     .block_name {
         margin-left: 25%;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
     .subtitle_contacts {
         width: 100%;
