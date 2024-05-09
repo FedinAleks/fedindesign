@@ -1,3 +1,57 @@
+// menu
+
+document.addEventListener("DOMContentLoaded", function() {
+  var menuLinks = document.querySelectorAll('.menu_list a');
+
+  menuLinks.forEach(function(menuLink) {
+      menuLink.addEventListener('click', function(e) {
+          e.preventDefault(); // Заборона стандартної поведінки переходу за посиланням
+          var targetId = this.getAttribute('href'); // Отримання id цільового блоку з атрибута href
+          var targetBlock = document.querySelector(targetId); // Знаходження цільового блоку
+          if (targetBlock) {
+              var targetOffset = targetBlock.offsetTop; // Отримання вертикального зсуву цільового блоку відносно початку документа
+              // Плавна прокрутка до цільового блоку
+              window.scrollTo({
+                  top: targetOffset,
+                  behavior: 'smooth'
+              });
+          }
+      });
+  });
+});
+
+
+// mobile menu
+
+
+function closeMenu() {
+  var menu = document.getElementById('menu');
+  menu.style.display = 'none';
+}
+
+// Додаємо обробники подій для кожного посилання в меню
+var menuLinks = document.querySelectorAll('.menu_mobile_list a');
+menuLinks.forEach(function(link) {
+  link.addEventListener('click', function(event) {
+      // Зчитуємо значення атрибута href
+      var targetId = this.getAttribute('href');
+
+      // Закриваємо меню
+      closeMenu();
+
+      // Прокручуємо сторінку до відповідного елемента
+      var targetElement = document.querySelector(targetId);
+      if (targetElement) {
+          event.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+  });
+});
+
+
+
+
+
 // header
 
 window.addEventListener('scroll', function() {
@@ -132,4 +186,9 @@ function closeForm() {
     document.getElementById("myForm").style.display = "none";
     document.getElementById("overlay").style.display = "none"; // Приховати overlay
 }
+
+
+// radial animation
+
+
   

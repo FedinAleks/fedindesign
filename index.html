@@ -11,17 +11,17 @@
 </head>
 <body>
     <div class="wrapper">
-        <section class="page_home">
+        <section class="page_home" id="page_home">
             <header>
                 <img class="logo" alt="logo" src="./image/logo.png">
                 <nav class="menu">
                     <ul class="menu_list">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About me</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">How I work</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#page_home">Home</a></li>
+                        <li><a href="#page_aboutme">About me</a></li>
+                        <li><a href="#page_service">Services</a></li>
+                        <li><a href="#page_howiwork">How I work</a></li>
+                        <li><a href="#page_portfolio">Portfolio</a></li>
+                        <li><a href="#page_contacts">Contacts</a></li>
                     </ul>
                 </nav>
                 <button class="button_primary" onclick="openForm()">Submit request</button>
@@ -30,15 +30,17 @@
                 </button>
                 <div id="menu" class="mobile_menu">
                     <ul class="menu_mobile_list">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About me</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">How I work</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#page_home">Home</a></li>
+                        <li><a href="#page_aboutme">About me</a></li>
+                        <li><a href="#page_service">Services</a></li>
+                        <li><a href="#page_howiwork">How I work</a></li>
+                        <li><a href="#page_portfolio">Portfolio</a></li>
+                        <li><a href="#page_contacts">Contacts</a></li>
                     </ul>
-                    <button class="close_button" onclick="closeMenu()">Close</button>
-                    <!-- Add your menu items here -->
+                    <div class="mobile_menu_buttons">
+                        <button class="button_primary_request" onclick="openForm()">Submit request</button>
+                        <button class="close_button" onclick="closeMenu()">Close</button>
+                    </div>    
                 </div>
             </header>            
             <h1>
@@ -64,37 +66,37 @@
             <div id="overlay" onclick="closeForm()"></div>
             <div class="form_popup" id="myForm">
                 <form class="form_container" action="/submit-form" method="POST">
-                    <span>Submit Request</span>
-                    <div>                        
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                        
-                        <label for="service">Service:</label>
-                        <select id="service" name="service" required>
-                            <option value="website">Website</option>
-                            <option value="banner">Banner</option>
-                            <option value="mobile_app">Mobile App</option>
-                            <option value="video">Video</option>
-                            <option value="cooperation">Cooperation</option>
-                        </select>
-                        
-                        <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" pattern="[0-9]{12}" required>
-                    </div>
-                    <div>
-                        <label for="comment">Comment:</label>
-                        <textarea id="comment" name="comment" required></textarea>
-                    </div>
+                    <span class="block_title">Submit Request</span>
+                    <form>    
+                        <div class="group">      
+                          <input type="text" required>
+                          <span class="highlight"></span>
+                          <span class="bar"></span>
+                          <label>Name</label>
+                        </div>                          
+                        <div class="group">      
+                          <input type="text" required>
+                          <span class="highlight"></span>
+                          <span class="bar"></span>
+                          <label>Email or Telegram</label>
+                        </div>
+                        <div class="group">      
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Comment</label>
+                          </div>
+                      </form>
                     <div class="g-recaptcha" data-sitekey="ВАШ_КЛЮЧ_САЙТУ"></div>
-                    <div>
-                        <button type="submit" class="button_primary">Submit</button>
+                    <div class="request_buttons">
+                        <button type="submit" class="button_primary">Send</button>
                         <button type="button" class="button_cancel" onclick="closeForm()">Close</button>
                     </div>
                 </form>
               </div>
         </section>
 
-        <section class="page_aboutme">
+        <section class="page_aboutme" id="page_aboutme">
             <span class="block_title">About me</span>
             <div class="aboutme_grid">
                 <div class="aboutme_block1">
@@ -140,7 +142,7 @@
                 <img src="./image/devicon_vscode.png">
             </div>
         </section>
-        <section class="page_service">
+        <section class="page_service" id="page_service">
             <div class="service_header">
                 <span class="block_title">Service</span>
                 <button class="button_primary" onclick="openForm()">Submit request</button>
@@ -213,10 +215,10 @@
             </div>
             <div class="main_buttons_service">
                 <button class="button_primary">Try now</button>
-                <button class="button_secodary">View works</button>
+                <button class="button_secodary" href="#page_portfolio">View works</button>
             </div>
         </section>
-        <section class="page_howiwork">
+        <section class="page_howiwork" id="page_howiwork">
             <span class="block_title">How I Work</span>
             <div class="how_i_work">
                 <div class="Briefing">
@@ -269,12 +271,13 @@
                 </div>
             </div>
         </section>
-        <section class="page_portfolio">
+        <section class="page_portfolio" id="page_portfolio">
             <span class="block_title">Portfolio</span>
             <div class="gallery">
                 <figure>
-                  <img src="https://images.unsplash.com/photo-1448814100339-234df1d4005d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                  <figcaption>Daytona Beach <small>United States</small></figcaption>
+                    <span>Number 1</span>
+                    <img src="https://images.unsplash.com/photo-1448814100339-234df1d4005d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
+                    <figcaption>Daytona Beach <small>United States</small></figcaption>
                 </figure>
                 <figure>
                   <img src="https://images.unsplash.com/photo-1443890923422-7819ed4101c0?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
@@ -336,20 +339,20 @@
                 </symbol>
               </svg>
         </section>
-        <section class="page_contacts">
+        <section class="page_contacts" id="page_contacts">
             <span class="block_title">Contacts</span>
             <span class="subtitle_contacts">Always open to new ideas and exciting projects! I'm ready to consider collaboration proposals and work together on projects. Get in touch with me, and together we can create something truly unique</span>
             <div class="contacts_section">
                 <button class="contacts_div">
-                    <svg class="icon_contact" xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 256 256"><path fill="272531" d="M228.88 26.19a9 9 0 0 0-9.16-1.57L17.06 103.93a14.22 14.22 0 0 0 2.43 27.21L72 141.45V200a15.92 15.92 0 0 0 10 14.83a15.91 15.91 0 0 0 17.51-3.73l25.32-26.26L165 220a15.88 15.88 0 0 0 10.51 4a16.3 16.3 0 0 0 5-.79a15.85 15.85 0 0 0 10.67-11.63L231.77 35a9 9 0 0 0-2.89-8.81m-61.14 36l-89.59 64.16l-49.6-9.73ZM88 200v-47.48l24.79 21.74Zm87.53 8l-82.68-72.5l119-85.29Z"/></svg>
+                    <svg class="icon_contact" xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 256 256"><path fill="#DDFF0B" d="M228.88 26.19a9 9 0 0 0-9.16-1.57L17.06 103.93a14.22 14.22 0 0 0 2.43 27.21L72 141.45V200a15.92 15.92 0 0 0 10 14.83a15.91 15.91 0 0 0 17.51-3.73l25.32-26.26L165 220a15.88 15.88 0 0 0 10.51 4a16.3 16.3 0 0 0 5-.79a15.85 15.85 0 0 0 10.67-11.63L231.77 35a9 9 0 0 0-2.89-8.81m-61.14 36l-89.59 64.16l-49.6-9.73ZM88 200v-47.48l24.79 21.74Zm87.53 8l-82.68-72.5l119-85.29Z"/></svg>
                     Telegram
                 </button>
                 <button class="contacts_div">
-                    <svg class="icon_contact" xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 256 256"><path fill="272531" d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32m48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56m40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12"/></svg>
+                    <svg class="icon_contact" xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 256 256"><path fill="#DDFF0B" d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32m48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56m40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12"/></svg>
                     Instagram
                 </button>
                 <button class="contacts_div">
-                    <svg class="icon_contact" xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 256 256"><path fill="272531" d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16m0 192H40V40h176zM96 112v64a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0m88 28v36a8 8 0 0 1-16 0v-36a20 20 0 0 0-40 0v36a8 8 0 0 1-16 0v-64a8 8 0 0 1 15.79-1.78A36 36 0 0 1 184 140m-84-56a12 12 0 1 1-12-12a12 12 0 0 1 12 12"/></svg>
+                    <svg class="icon_contact" xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 256 256"><path fill="#DDFF0B" d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16m0 192H40V40h176zM96 112v64a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0m88 28v36a8 8 0 0 1-16 0v-36a20 20 0 0 0-40 0v36a8 8 0 0 1-16 0v-64a8 8 0 0 1 15.79-1.78A36 36 0 0 1 184 140m-84-56a12 12 0 1 1-12-12a12 12 0 0 1 12 12"/></svg>
                     LinkedIn
                 </button>
             </div>
