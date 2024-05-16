@@ -220,15 +220,44 @@ h1 {
 
 
 .violet_radial {
-    z-index: -1;
-    position: absolute; 
-
+    z-index: -10;
+    position: fixed;
+    top: 3em;
+    left: -3em; 
+    opacity: 0.7;
+    transform-origin: center; /* точка обертання в центрі Місяця */
+    animation: orbit 6s linear infinite; /* анімація обертання */
+    
 }
+
+
 .yellow_radial {
-    z-index: -1;
+    z-index: -10;
     position: absolute;
-
+    position: fixed;
+    top: 20em;
+    left: 70em; 
+    opacity: 0.7;
+    transform-origin: center; /* точка обертання в центрі Місяця */
+    animation: orbityellow 6s linear infinite; /* анімація обертання */
 }
+
+@keyframes orbit {
+    from {
+      transform: rotate(0deg) translateX(300px) rotate(0deg); /* початкова позиція Місяця */
+    }
+    to {
+      transform: rotate(360deg) translateX(300px) rotate(-360deg); /* кінцева позиція Місяця (360 градусів навколо Землі) */
+    }
+  }
+  @keyframes orbityellow {
+    from {
+      transform: rotate(0deg) translateX(300px) rotate(0deg); /* початкова позиція Місяця */
+    }
+    to {
+      transform: rotate(-360deg) translateX(300px) rotate(360deg); /* кінцева позиція Місяця (360 градусів навколо Землі) */
+    }
+  }
 
 #overlay {
     display: none;
@@ -610,7 +639,8 @@ h3 {
 }
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 img {
@@ -621,29 +651,39 @@ img {
   position: relative;
   z-index: 2;
   padding: 10px;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
     grid-template-columns: repeat(3, 1fr); /* Три колонки з однаковою шириною */
     grid-gap: 20px; /* Проміжок між елементами */
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
-  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 
   &.pop {
-    filter: blur(10px);
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
   }
 
   figure {
-    flex-basis: calc(27% - 20px);
+    -ms-flex-preferred-size: calc(27% - 20px);
+        flex-basis: calc(27% - 20px);
     padding: 10px;
     overflow: hidden;
     cursor: pointer;
 
     img {
       width: 100%;
+      -webkit-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out;
       border-radius: 10px;
     }
     img:hover {
-        box-shadow: 0 5px 10px rgba(203, 253, 0, 0.2);
+        -webkit-box-shadow: 0 5px 10px rgba(203, 253, 0, 0.2);
+                box-shadow: 0 5px 10px rgba(203, 253, 0, 0.2);
         cursor: pointer;
     }
     
@@ -663,11 +703,15 @@ img {
   height: 100vh;
   background: #272531;
   opacity: 0;
+  -webkit-transition: opacity .5s ease-in-out .2s;
+  -o-transition: opacity .5s ease-in-out .2s;
   transition: opacity .5s ease-in-out .2s;
 
 
   &.pop {
     opacity: 1;
+    -webkit-transition: opacity .2s ease-in-out 0s;
+    -o-transition: opacity .2s ease-in-out 0s;
     transition: opacity .2s ease-in-out 0s;
 
     figure {
@@ -680,21 +724,29 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transform-origin: 0 0;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
     margin-top: 30px;
     opacity: 0;
-    animation: poppy 500ms linear both;
+    -webkit-animation: poppy 500ms linear both;
+            animation: poppy 500ms linear both;
 
     img {
       position: relative;
       z-index: 2;
-      box-shadow: 0 1px 5px rgba(0, 0, 0, .2), 0 6px 30px rgba(0, 0, 0, .4);
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .2), 0 6px 30px rgba(0, 0, 0, .4);
+              box-shadow: 0 1px 5px rgba(0, 0, 0, .2), 0 6px 30px rgba(0, 0, 0, .4);
     }
     
     figcaption {
       position: absolute;
       bottom: 50px;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.78)));
+      background: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.78));
       background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.78));
       z-index: 2;
       width: 100%;
@@ -724,9 +776,14 @@ img {
       width: 98%;
       height: 50px;
       opacity: .9;
-      filter: blur(16px) contrast(1.5);
-      transform: scale(0.95, -0.7);
-      transform-origin: center bottom;
+      -webkit-filter: blur(16px) contrast(1.5);
+              filter: blur(16px) contrast(1.5);
+      -webkit-transform: scale(0.95, -0.7);
+          -ms-transform: scale(0.95, -0.7);
+              transform: scale(0.95, -0.7);
+      -webkit-transform-origin: center bottom;
+          -ms-transform-origin: center bottom;
+              transform-origin: center bottom;
     }
   }
 
@@ -741,7 +798,8 @@ img {
     background: url(#close);
     border-radius: 25px;
     background: rgba(0, 0, 0, .1);
-    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+            box-shadow: 0 0 3px rgba(0, 0, 0, .2);
 
     svg {
       width: 100%;
