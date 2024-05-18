@@ -136,41 +136,27 @@ toggleButtons.forEach(function(button) {
 
 // portfolio
 
-popup = {
-    init: function(){
-      $('figure').click(function(){
-        popup.open($(this));
-      });
-      
-      $(document).on('click', '.popup img', function(){
-        return false;
-      }).on('click', '.popup', function(){
-        popup.close();
-      })
-    },
-    open: function($figure) {
-      $('.gallery').addClass('pop');
-      $popup = $('<div class="popup" />').appendTo($('body'));
-      $fig = $figure.clone().appendTo($('.popup'));
-      $bg = $('<div class="bg" />').appendTo($('.popup'));
-      $close = $('<div class="close"><svg><use xlink:href="#close"></use></svg></div>').appendTo($fig);
-      $shadow = $('<div class="shadow" />').appendTo($fig);
-      src = $('img', $fig).attr('src');
-      $shadow.css({backgroundImage: 'url(' + src + ')'});
-      $bg.css({backgroundImage: 'url(' + src + ')'});
-      setTimeout(function(){
-        $('.popup').addClass('pop');
-      }, 10);
-    },
-    close: function(){
-      $('.gallery, .popup').removeClass('pop');
-      setTimeout(function(){
-        $('.popup').remove()
-      }, 100);
-    }
-  }
-  
-  popup.init()
+// Отримуємо всі елементи з класом 'gallery_project'
+const projects = document.querySelectorAll('.gallery_project');
+
+// Додаємо обробник подій для кожного проєкту
+projects.forEach(project => {
+    project.addEventListener('click', () => {
+        const projectId = project.dataset.project;
+        loadProject(projectId);
+    });
+});
+
+function loadProject(projectId) {
+    // Загрузка контенту проєкту за допомогою AJAX або Fetch API
+    fetch(`projects/${projectId}.html`)
+        .then(response => response.text())
+        .then(html => {
+            // Відображення контенту проєкту на поточній сторінці
+            document.getElementById('project_content').innerHTML = html;
+        })
+        .catch(error => console.error('Error loading project:', error));
+}
 
 
 
