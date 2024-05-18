@@ -157,6 +157,12 @@ function loadProject(projectId) {
         })
         .catch(error => console.error('Error loading project:', error));
 }
+function loadProject(projectId) {
+  // Формуємо URL до HTML-файлу проекту
+  const projectUrl = `https://fedinaleks.github.io/fedindesign/projects/${projectId}.html`;
+  // Відкриваємо нову вкладку з URL проекту
+  window.open(projectUrl, '_blank');
+}
 
 
 
