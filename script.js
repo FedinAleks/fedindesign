@@ -136,34 +136,18 @@ toggleButtons.forEach(function(button) {
 
 // portfolio
 
-// Отримуємо всі елементи з класом 'gallery_project'
 const projects = document.querySelectorAll('.gallery_project');
 
 // Додаємо обробник подій для кожного проєкту
 projects.forEach(project => {
     project.addEventListener('click', () => {
         const projectId = project.dataset.project;
-        loadProject(projectId);
+        // Формуємо URL до HTML-файлу проекту
+        const projectUrl = `projects/${projectId}/${projectId}.html`;
+        // Відкриваємо нову вкладку з URL проекту
+        window.open(projectUrl, '_blank');
     });
 });
-
-function loadProject(projectId) {
-    // Загрузка контенту проєкту за допомогою AJAX або Fetch API
-    fetch(`projects/${projectId}.html`)
-        .then(response => response.text())
-        .then(html => {
-            // Відображення контенту проєкту на поточній сторінці
-            document.getElementById('project_content').innerHTML = html;
-        })
-        .catch(error => console.error('Error loading project:', error));
-}
-function loadProject(projectId) {
-  // Формуємо URL до HTML-файлу проекту
-  const projectUrl = `https://fedinaleks.github.io/fedindesign/projects/${projectId}.html`;
-  // Відкриваємо нову вкладку з URL проекту
-  window.open(projectUrl, '_blank');
-}
-
 
 
   
