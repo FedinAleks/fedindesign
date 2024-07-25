@@ -147,48 +147,4 @@ projects.forEach(project => {
         // Відкриваємо нову вкладку з URL проекту
         window.open(projectUrl, '_blank');
     });
-});
-
-
-  
-
-
-
-
-
-// Ініціалізуйте EmailJS
-emailjs.init('w9zV27iIMkF99mIcW'); // Замість 'YOUR_USER_ID' використовуйте ваш реальний ID
-
-function openForm() {
-    document.getElementById("myForm").style.display = "block";
-    document.getElementById("overlay").style.display = "block"; // Показати overlay
-}
-  
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-    document.getElementById("overlay").style.display = "none"; // Приховати overlay
-}
-
-function sendEmail() {
-    var templateParams = {
-        name: document.getElementById('name').value,
-        contact: document.getElementById('contact').value,
-        comment: document.getElementById('comment').value
-    };
-
-    emailjs.send('service_1hvvct5', 'template_w2gaozk', templateParams)
-        .then(function(response) {
-            console.log('Sent successfully:', response);
-            alert('Your request has been sent successfully!');
-            closeForm();
-        }, function(error) {
-            console.log('Failed to send:', error);
-            alert('Failed to send your request. Please try again.');
-        });
-}
-
-
-
-
-
-  
+});  
