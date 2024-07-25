@@ -157,7 +157,7 @@ projects.forEach(project => {
 
 
 // Ініціалізуйте EmailJS
-emailjs.init('HmGIGe1D0b0gRYScF'); // Замість 'YOUR_USER_ID' використовуйте ваш реальний ID
+emailjs.init('w9zV27iIMkF99mIcW'); // Замість 'YOUR_USER_ID' використовуйте ваш реальний ID
 
 function openForm() {
     document.getElementById("myForm").style.display = "block";
