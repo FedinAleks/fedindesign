@@ -38,7 +38,7 @@
                         <li><a href="#page_contacts">Contacts</a></li>
                     </ul>
                     <div class="mobile_menu_buttons">
-                        <button class="button_primary_request" onclick="openForm()">Submit request</button>
+                        <button class="button_primary" onclick="openForm()">Submit request</button>
                         <button class="close_button" onclick="closeMenu()">Close</button>
                     </div>    
                 </div>
@@ -65,35 +65,34 @@
             
             <div id="overlay" onclick="closeForm()"></div>
             <div class="form_popup" id="myForm">
-                <form class="form_container" action="/submit-form" method="POST">
+                <form id="requestForm" class="form_container">
                     <span class="block_title">Submit Request</span>
-                    <form>    
-                        <div class="group">      
-                          <input type="text" required>
-                          <span class="highlight"></span>
-                          <span class="bar"></span>
-                          <label>Name</label>
-                        </div>                          
-                        <div class="group">      
-                          <input type="text" required>
-                          <span class="highlight"></span>
-                          <span class="bar"></span>
-                          <label>Email or Telegram</label>
-                        </div>
-                        <div class="group">      
-                            <input type="text" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Comment</label>
-                          </div>
-                      </form>
-                    <div class="g-recaptcha" data-sitekey="ВАШ_КЛЮЧ_САЙТУ"></div>
+
+                    <div class="group">      
+                        <input type="text" id="name" name="name" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Name</label>
+                    </div>                          
+                    <div class="group">      
+                        <input type="text" id="contact" name="contact" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Email or Telegram</label>
+                    </div>
+                    <div class="group">      
+                        <input type="text" id="comment" name="comment" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Comment</label>
+                    </div>
+
                     <div class="request_buttons">
-                        <button type="submit" class="button_primary">Send</button>
+                        <button type="button" onclick="sendEmail()" class="button_primary">Send</button>
                         <button type="button" class="button_cancel" onclick="closeForm()">Close</button>
                     </div>
                 </form>
-              </div>
+            </div>
         </section>
 
         <section class="page_aboutme" id="page_aboutme">
@@ -351,7 +350,7 @@
         </div>
     </footer>
     
-
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
